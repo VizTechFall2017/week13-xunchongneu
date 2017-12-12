@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Interactive Multi Chart</title>
+    <link rel="stylesheet" type="text/css" href="./bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+    <style>
+        #mapchart .tooltip1 {
+            position: absolute;
+            text-align: center;
+            padding: 10px;
+            font: 18px sans-serif;
+            background: #000;
+            border: 0px;
+            border-radius: 8px;
+            pointer-events: none;
+        }
+        #mapchart .companyinfo {
+            background:#000;
+        }
+        #linechart svg {
+            background:lightgrey;
+        }
+        #linechart .tick line {
+            stroke:#fff;
+        }
+        #linechart .tick text {
+            fill:#fff;
+        }
+        #linechart path.domain {
+            stroke:#fff;
+        }
+    </style>
+    <script src="./jquery-3.2.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+    <script src="./bootstrap.js"></script>
+    <script src="./d3.v4.2.6.min.js"></script>
+    <script src="./d3-queue.v3.min.js"></script>
+    <script src="./d3.tip.v0.6.3.js"></script>
+</head>
+<body>
+</div>
+<div class="colorDiv" id="div1">
+    <img src="download.jpg">
+</div>
+<div id="barchart" class="barchart" style="padding:30px">
+    <input type="range" min="1" max="13" value="1" class="slider" id="mySlider" oninput="sliderMoved(value)">
+    <br>
+    <h3>Yearly Performance</h3>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-6 svgBox">
+                        <svg width="100%" height="100%" id="svg1"></svg>
+                    </div>
+                    <div class="col-md-6 svgBox">
+                        <svg width="100%" height="100%" id="svg2"></svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tooltip1"></div>
+</div>
+<div id="mapchart" class="mapchart" style="width:800px; height:400px; display: inline-block;">
+</div>
+<div id="linechart" class="linechart" style="width: 600px; height:400px; float:right; position: relative; right:60px;">
+    <h3>Monthly Performance</h3>
+</div>
+<script src="barchart.js"></script>
+</body>
+</html>
